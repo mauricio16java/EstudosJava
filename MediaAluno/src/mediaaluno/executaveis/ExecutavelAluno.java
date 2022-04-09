@@ -34,26 +34,16 @@ public class ExecutavelAluno {
 		aluno1.setEscola(escola);
 		
 		
-		Diciplina diciplina1 = new Diciplina();
-		diciplina1.setDiciplina("BANCO DE DADOS");
-		diciplina1.setNota(90);
-		
-		Diciplina diciplina2 = new Diciplina();
-		diciplina2.setDiciplina("java basico");
-		diciplina2.setNota(89);
-		
-		Diciplina diciplina3 = new Diciplina();
-		diciplina3.setDiciplina("java oo");
-		diciplina3.setNota(79.45);
-		
-		Diciplina diciplina4 = new Diciplina();
-		diciplina4.setDiciplina("algoritimos");
-		diciplina4.setNota(85.10);
-		
-		aluno1.getDiciplinas().add(diciplina1);
-		aluno1.getDiciplinas().add(diciplina2);
-		aluno1.getDiciplinas().add(diciplina3);
-		aluno1.getDiciplinas().add(diciplina4);
+		for(int pos = 1; pos <=4; pos++) {
+			String nomeDiciplina = JOptionPane.showInputDialog("NOME DA DICIPLINA : "+pos+" ");
+			String notaDiciplina = JOptionPane.showInputDialog("NOTA DA DICIPLINA : "+pos+" " );
+			Diciplina diciplina = new Diciplina();
+			diciplina.setDiciplina(nomeDiciplina);
+			diciplina.setNota(Double.valueOf(notaDiciplina));
+			
+			aluno1.getDiciplinas().add(diciplina);
+			
+		}
 		
 		
 		System.out.println(aluno1.toString());
