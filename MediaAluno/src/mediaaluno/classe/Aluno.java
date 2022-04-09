@@ -2,6 +2,7 @@ package mediaaluno.classe;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Aluno {
 	private String nome;
@@ -138,6 +139,36 @@ public class Aluno {
 			  return false;
 		  }
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cpf, dataMatricula, dataNacimento, diciplinas, escola, idade, nome, nomeMae, nomePai, rg,
+				serieMtriculado);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(cpf, other.cpf) && Objects.equals(dataMatricula, other.dataMatricula)
+				&& Objects.equals(dataNacimento, other.dataNacimento) && Objects.equals(diciplinas, other.diciplinas)
+				&& Objects.equals(escola, other.escola) && idade == other.idade && Objects.equals(nome, other.nome)
+				&& Objects.equals(nomeMae, other.nomeMae) && Objects.equals(nomePai, other.nomePai)
+				&& Objects.equals(rg, other.rg) && Objects.equals(serieMtriculado, other.serieMtriculado);
+	}
+
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNacimento=" + dataNacimento + ", cpf=" + cpf
+				+ ", rg=" + rg + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula
+				+ ", serieMtriculado=" + serieMtriculado + ", escola=" + escola + ", diciplinas=" + diciplinas + "]";
+	}
+	  
 	
 	
 
