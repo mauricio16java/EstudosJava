@@ -118,26 +118,19 @@ public class Aluno {
 	  }
 	    return somaNotas / diciplinas.size();
 	}
-	
-	/*public double getAlunoAprovado() {
+	public String  getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if(media >= 50) {
+		if(media >=50) {
 			if(media >= 70) {
-				System.out.println();
+				return "aluno aprovado";
 			}else {
-				System.out.println();
+				return "aluno em recuperação";
 			}
 		}else {
-			System.out.println();
-		}*/
-	
-	  public boolean getAlunoAprovado() {
-		  double media = this.getMediaNota();
-		  if(media >=70) {
-			  return true;
-		  }else {
-			  return false;
-		  }
+			return "aluno reprovado";
+		}
+		
+		
 	}
 
 	@Override
@@ -168,6 +161,9 @@ public class Aluno {
 				+ ", rg=" + rg + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula
 				+ ", serieMtriculado=" + serieMtriculado + ", escola=" + escola + ", diciplinas=" + diciplinas + "]";
 	}
+	
+
+
 	  
 	
 	
