@@ -44,9 +44,14 @@ public class ExecutavelAluno {
 		}
 		int escolha = JOptionPane.showConfirmDialog(null, "deseja remove diciplina ?");
 		if (escolha == 0) {
+			int contunueRemover = 0;
+			while(contunueRemover == 0){
 			String diciplinaRemover = JOptionPane.showInputDialog("deseja remover qual diciplina 1, 2, 3, ou 4");
 			aluno1.getDiciplinas().remove(Integer.valueOf(diciplinaRemover).intValue() - 1);
+			contunueRemover = JOptionPane.showInternalConfirmDialog(null, "continuar removendo ?");
+			}
 		}
+			
 
 		System.out.println(aluno1.toString());
 		System.out.println("A MEDIA DO ALUNO E : " + aluno1.getMediaNota());
