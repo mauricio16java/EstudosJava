@@ -10,10 +10,10 @@ import mediaaluno.classe.Diciplina;
 
 public class ExecutavelAluno {
 	public static void main(String[] args) {
-		
+
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
-		for (int qtd = 1; qtd >= 2; qtd++) {
+		for (int qtd = 1; qtd <= 2; qtd++) {
 
 			String nome = JOptionPane.showInputDialog("NOME  DO ALUNO ? :  " + qtd + "");
 			String idade = JOptionPane.showInputDialog("IDADE : ");
