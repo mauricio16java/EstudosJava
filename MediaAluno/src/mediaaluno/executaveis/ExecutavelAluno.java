@@ -64,11 +64,13 @@ public class ExecutavelAluno {
 			alunos.add(aluno1);
 		}
 		for (Aluno aluno : alunos) {
-			System.out.println(aluno.toString());
-			System.out.println("A MEDIA DO ALUNO E : " + aluno.getMediaNota());
-			System.out.println("RESULTADO  " + aluno.getAlunoAprovado());
-			System.out.println("----------------------------------------------");
+			if (aluno.getNome().equalsIgnoreCase("mauricio")) {
 
+				System.out.println(aluno.toString());
+				System.out.println("A MEDIA DO ALUNO E : " + aluno.getMediaNota());
+				System.out.println("RESULTADO  " + aluno.getAlunoAprovado());
+				System.out.println("----------------------------------------------");
+			}
 		}
 
 	}
