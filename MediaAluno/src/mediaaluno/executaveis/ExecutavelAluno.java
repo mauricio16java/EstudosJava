@@ -65,11 +65,24 @@ public class ExecutavelAluno {
 		}
 		for (Aluno aluno : alunos) {
 			if (aluno.getNome().equalsIgnoreCase("mauricio")) {
-
+				alunos.remove(aluno);
+				break;
+			} else {
 				System.out.println(aluno.toString());
 				System.out.println("A MEDIA DO ALUNO E : " + aluno.getMediaNota());
 				System.out.println("RESULTADO  " + aluno.getAlunoAprovado());
 				System.out.println("----------------------------------------------");
+			}
+
+		}
+		for (Aluno aluno : alunos) {
+			System.out.println("Alunos que sobraram :");
+			System.out.println(aluno.getNome());
+			System.out.println("suas materias são : ");
+
+			for (Diciplina diciplina : aluno.getDiciplinas()) {
+				System.out.println(diciplina.getDiciplina());
+
 			}
 		}
 
