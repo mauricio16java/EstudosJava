@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import mediaaluno.classe.classesStaticas.StatusAluno;
+
 public class Aluno {
 	private String nome;
 	private int idade;
@@ -15,11 +17,9 @@ public class Aluno {
 	private String dataMatricula;
 	private String serieMtriculado;
 	private String escola;
-	
+
 	private List<Diciplina> diciplinas = new ArrayList<Diciplina>();
-	
-	
-	
+
 	public List<Diciplina> getDiciplinas() {
 		return diciplinas;
 	}
@@ -29,7 +29,7 @@ public class Aluno {
 	}
 
 	public Aluno() {
-		
+
 	}
 
 	public String getNome() {
@@ -111,26 +111,27 @@ public class Aluno {
 	public void setEscola(String escola) {
 		this.escola = escola;
 	}
+
 	public double getMediaNota() {
 		double somaNotas = 0.0;
-	  for(Diciplina diciplina : diciplinas) {
-		  somaNotas += diciplina.getNota();
-	  }
-	    return somaNotas / diciplinas.size();
-	}
-	public String  getAlunoAprovado() {
-		double media = this.getMediaNota();
-		if(media >=50) {
-			if(media >= 70) {
-				return "aluno aprovado";
-			}else {
-				return "aluno em recuperação";
-			}
-		}else {
-			return "aluno reprovado";
+		for (Diciplina diciplina : diciplinas) {
+			somaNotas += diciplina.getNota();
 		}
-		
-		
+		return somaNotas / diciplinas.size();
+	}
+
+	public String getAlunoAprovado() {
+		double media = this.getMediaNota();
+		if (media >= 50) {
+			if (media >= 70) {
+				return StatusAluno.APROVADO;
+			} else {
+				return StatusAluno.RECUPERACAO;
+			}
+		} else {
+			return StatusAluno.REPROVADO;
+		}
+
 	}
 
 	@Override
@@ -161,11 +162,5 @@ public class Aluno {
 				+ ", rg=" + rg + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula
 				+ ", serieMtriculado=" + serieMtriculado + ", escola=" + escola + ", diciplinas=" + diciplinas + "]";
 	}
-	
-
-
-	  
-	
-	
 
 }
