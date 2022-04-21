@@ -6,14 +6,8 @@ import java.util.Objects;
 
 import mediaaluno.classe.classesStaticas.StatusAluno;
 
-public class Aluno {
-	private String nome;
-	private int idade;
-	private String dataNacimento;
-	private String cpf;
-	private String rg;
-	private String nomeMae;
-	private String nomePai;
+public class Aluno extends Pessoa {
+
 	private String dataMatricula;
 	private String serieMtriculado;
 	private String escola;
@@ -161,6 +155,16 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNacimento=" + dataNacimento + ", cpf=" + cpf
 				+ ", rg=" + rg + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula
 				+ ", serieMtriculado=" + serieMtriculado + ", escola=" + escola + ", diciplinas=" + diciplinas + "]";
+	}
+
+	@Override
+	public boolean pessoaMaiorIdade() {
+
+		return idade >= 21;
+	}
+
+	public String msgMaioridade() {
+		return this.pessoaMaiorIdade() ? "Aluno amior de idade " : "Aluno menor de idade";
 	}
 
 }

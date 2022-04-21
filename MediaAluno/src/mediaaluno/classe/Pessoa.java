@@ -74,6 +74,9 @@ public class Pessoa {
 		return "Pessoa [nome=" + nome + ", idade=" + idade + ", dataNacimento=" + dataNacimento + ", cpf=" + cpf
 				+ ", rg=" + rg + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
+	public boolean pessoaMaiorIdade() {
+		return idade >=18;
+	}
 	
 	
 
