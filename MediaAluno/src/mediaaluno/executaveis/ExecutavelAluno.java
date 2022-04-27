@@ -8,13 +8,19 @@ import javax.swing.JOptionPane;
 
 import mediaaluno.classe.Aluno;
 import mediaaluno.classe.Diciplina;
+import mediaaluno.classe.Secretario;
 import mediaaluno.classe.classesStaticas.StatusAluno;
 
 public class ExecutavelAluno {
 	public static void main(String[] args) {
 		String login = JOptionPane.showInputDialog("informe o login");
 		String senha = JOptionPane.showInputDialog("informe a senha");
-		if (login.equalsIgnoreCase("lucas") && senha.equalsIgnoreCase("123")) {
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		if (secretario.autenticar()) {
+			
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -106,6 +112,8 @@ public class ExecutavelAluno {
 
 			}
 
+		}else {
+			JOptionPane.showMessageDialog(null, "acesso negado");
 		}
 	}
 
