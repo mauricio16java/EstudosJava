@@ -11,6 +11,7 @@ public class Diretor extends Pessoa  implements PermitirAcesso{
 	private String titulacao;
 	private String login;
 	private String senha;
+	
 	public Diretor(String login, String senha) {
 		this.login = login;
 		this.senha = senha;
@@ -19,7 +20,6 @@ public class Diretor extends Pessoa  implements PermitirAcesso{
 		return registroEducacao;
 	}
 	public Diretor() {
-		// TODO Auto-generated constructor stub
 	}
 	public void setRegistroEducacao(String registroEducacao) {
 		this.registroEducacao = registroEducacao;
@@ -65,16 +65,20 @@ public class Diretor extends Pessoa  implements PermitirAcesso{
 		// TODO Auto-generated method stub
 		return super.pessoaMaiorIdade();
 	}
+	
 	@Override
 	public boolean autenticar(String loging, String senha) {
-		// TODO Auto-generated method stub
-		return false;
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
+		
 	}
 	@Override
 	public boolean autenticar() {
 		// TODO Auto-generated method stub
-		return false;
+		return login.equals("admin")&& senha.equals("123");
 	}
+	
 	
 
 }

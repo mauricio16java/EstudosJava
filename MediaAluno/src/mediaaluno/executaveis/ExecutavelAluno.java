@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import MediaAluno.classesAuxiliares.Autenticacao;
 import MediaAluno.interfaces.PermitirAcesso;
 import mediaaluno.classe.Aluno;
 import mediaaluno.classe.Diciplina;
@@ -21,7 +22,7 @@ public class ExecutavelAluno {
 		
 		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
-		if (new Diretor().autenticar()) {// vou trava o cotrato para autorizara somente para quem realmete tem o contrato 100% legitimo
+		if (new Autenticacao(new Diretor( login, senha)).autenticarEscola(permitirAcesso)) {// vou trava o cotrato para autorizara somente para quem realmete tem o contrato 100% legitimo
 			
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
