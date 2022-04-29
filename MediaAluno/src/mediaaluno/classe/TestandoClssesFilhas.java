@@ -16,7 +16,7 @@ public class TestandoClssesFilhas {
 		aluno1.setDataNacimento(dataNascimentoString);
 		aluno1.setEscola(escola);
 
-		Diretor diretor = new Diretor();
+		Diretor diretor = new Diretor(escola, escola);
 		String nomeDiretor = JOptionPane.showInputDialog("nome do Diretor?");
 		String idadeD = JOptionPane.showInputDialog("idade ?");
 		String dataNascimentoD = JOptionPane.showInputDialog("data de nascimento ?");

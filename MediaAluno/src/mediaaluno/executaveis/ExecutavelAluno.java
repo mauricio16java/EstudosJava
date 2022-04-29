@@ -6,8 +6,10 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import MediaAluno.interfaces.PermitirAcesso;
 import mediaaluno.classe.Aluno;
 import mediaaluno.classe.Diciplina;
+import mediaaluno.classe.Diretor;
 import mediaaluno.classe.Secretario;
 import mediaaluno.classe.classesStaticas.StatusAluno;
 
@@ -15,11 +17,11 @@ public class ExecutavelAluno {
 	public static void main(String[] args) {
 		String login = JOptionPane.showInputDialog("informe o login");
 		String senha = JOptionPane.showInputDialog("informe a senha");
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
 		
-		if (secretario.autenticar()) {
+		
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		
+		if (new Diretor().autenticar()) {// vou trava o cotrato para autorizara somente para quem realmete tem o contrato 100% legitimo
 			
 
 			List<Aluno> alunos = new ArrayList<Aluno>();

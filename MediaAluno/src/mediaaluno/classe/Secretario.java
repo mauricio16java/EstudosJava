@@ -11,18 +11,14 @@ public class Secretario  extends Pessoa implements PermitirAcesso{
 	private String login;
 	private String senha;
 	
-	public String getLogin() {
-		return login;
-	}
-	public void setLogin(String login) {
+	public Secretario(String login , String senha) {
 		this.login = login;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	public Secretario() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public String getRegistro() {
 		return registro;
 	}
@@ -41,6 +37,7 @@ public class Secretario  extends Pessoa implements PermitirAcesso{
 	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -69,10 +66,18 @@ public class Secretario  extends Pessoa implements PermitirAcesso{
 		// TODO Auto-generated method stub
 		return super.pessoaMaiorIdade();
 	}
+	
+	@Override
+	public boolean autenticar(String loging, String senha) {
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
+		
+	}
 	@Override
 	public boolean autenticar() {
 		// TODO Auto-generated method stub
-		return login.equals("admin" )&& senha.equals("admin");
+		return login.equals("admin")&& senha.equals("admin");
 	}
 	
 
